@@ -3,9 +3,16 @@
 # Пример:
 # [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-my_list = [1, 45, 789, 546, 0, 56, 3, 67, 2, 32, 45]
-sum = 0
 
+import random
+
+num = int(input('Введите число элементов списка: '))
+my_list = []
+for i in range(num):
+    my_list.append(random.randint(1, 100))
+print(my_list)
+
+sum = 0
 for i in range(len(my_list)):
     if i % 2 != 0:
         sum += my_list[i]
