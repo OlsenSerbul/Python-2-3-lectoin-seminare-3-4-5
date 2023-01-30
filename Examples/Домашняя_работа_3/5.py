@@ -11,12 +11,10 @@ index = 0
 index1=0
 while len(poz_fib) <= k:
     poz_fib.append(poz_fib[index]+ poz_fib[index+1])
-    #poz_fib.insert(k-1,poz_fib[index]- poz_fib[index+1])
     index += 1
 
 while len(neg_fib) <= k:
     neg_fib.append(- neg_fib[index1+1] + neg_fib[index1] )
-    #poz_fib.insert(k-1,poz_fib[index]- poz_fib[index+1])
     index1 += 1
 
 neg_fib.reverse()
