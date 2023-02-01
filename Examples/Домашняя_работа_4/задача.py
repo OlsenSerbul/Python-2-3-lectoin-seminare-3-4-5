@@ -22,13 +22,12 @@ def rand_equation(k):
 
 my_dict = rand_equation(k)
 print(my_dict)
-def rez_equation(k, my_dict):
-    rez = []
-    for k, v in my_dict.items():
-        rez.append(str(k) + ' '+ str(v))
-    return str(rez)
 
+my_list = list(my_dict.items())
+print(my_list)
 
+for i in range(len(my_list)):
+    print(f'{my_list[list(i)]}*x**{my_list[list(i)]}')
 
     # for key in my_dict:
     #     for item in my_dict:
@@ -41,11 +40,11 @@ def rez_equation(k, my_dict):
 
     # return rez
             
-rez = rez_equation(k, my_dict)          
-print(*rez)
-my_string = rez.replace("'", '').replace('[', '').replace(',','').replace(']', '')
-print(my_string)
+# rez = rez_equation(k, my_dict)          
+# print(*rez)
+#my_string = rez.replace("'", '').replace('[', '').replace(',','').replace(']', '')
 
 
-string1 = f'{my_string(1, 1)}*x**{my_string(1,2)}'
-print(string1)
+
+# string1 = f'{my_string[]}*x**{my_string(1,2)}'
+# print(string1)
