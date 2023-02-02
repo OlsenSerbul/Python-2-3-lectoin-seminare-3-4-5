@@ -39,20 +39,3 @@ else:
 
 
 
-
-
-#        took_sweet= int(input(f'Сейчас ход {player_list[0]} сколько конфет ты берешь?  '))
-#        if took_sweet > 28 :
-#         print ('За один ход можно взять не более 28 конфет. Попробуй еще раз. ')
-#        else:
-#         num_sweet -= took_sweet
-#         if number_human == 2:
-#             number_human = 1
-#             took_sweet= int(input(f'Игра продолжается. Игрок № {number_human} сколько конфет ты берешь?  '))
-#         else:
-#             number_human = 2
-#             took_sweet= int(input(f'Игра продолжается. Игрок № {number_human} сколько конфет ты берешь?  '))
-#     print(f'Конфет больше нет!Победил игрок № {number_human}!') 
-
-# else:
-#     print('Может в следующий раз. Пока!')   

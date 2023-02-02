@@ -7,28 +7,23 @@ print('Привет! Прочитай правила игры: играют 2 и
 
 play = int(input('Договоритесь сейчас, кто игрок № 1 и № 2. Если начинаем, введи 1 , если не хочешь играть - введи 0:  '))
 if play == 1:
-    number_human = random.randint(1,3)
-    print(f'Жеребьевка закончена. Сейчас ход игрока № {number_human}')
+    number_human1 = [1, 2]
+    random.shuffle(number_human1)
+    print(f'Жеребьевка закончена. Сейчас ход игрока № {number_human1[0]}')
     while num_sweet >= 0:
-
-       took_sweet= int(input(f'Игрок № {number_human} сколько конфет ты берешь?  '))
-       if took_sweet > 28 :
-        print ('За один ход можно взять не более 28 конфет. Попробуй еще раз. ')
-       else:
-        num_sweet -= took_sweet
-        if number_human == 2:
-            number_human = 1
-            took_sweet= int(input(f'Игра продолжается. Игрок № {number_human} сколько конфет ты берешь?  '))
-        else:
-            number_human = 2
-            took_sweet= int(input(f'Игра продолжается. Игрок № {number_human} сколько конфет ты берешь?  '))
-    print(f'Конфет больше нет!Победил игрок № {number_human}!') 
-
+         print('Конфеты есть, играем')
+         took_sweet= int(input(f'Игрок № {number_human1[0]} сколько конфет ты берешь?  '))
+         while took_sweet > 28 :
+              print ('За один ход можно взять не более 28 конфет. Попробуй еще раз. ')
+              took_sweet= int(input('Cколько конфет ты берешь?  '))
+              num_sweet -= took_sweet
+         num_sweet -= took_sweet
+         if num_sweet > 0:
+            temp = number_human1[0]
+            number_human1[0]=number_human1[1]
+            number_human1[1]=temp
+    print(f'Конфет больше нет!Победил игрок № {number_human1[0]}!')
 else:
-    print('Может в следующий раз. Пока!')   
-
-
-    
-
-
+     print('Может в следующий раз. Пока!')   
+           
 
