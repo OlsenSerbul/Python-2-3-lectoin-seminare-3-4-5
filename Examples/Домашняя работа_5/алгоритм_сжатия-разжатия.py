@@ -3,11 +3,10 @@
 # aaaaabbbcccc -> 5a3b4c
 # 5a3b4c -> aaaaabbbcccc
 
-f = "new_file.txt"
-data = open(f, 'r')
-for line in data:
-    print(line)
+f = open('new_file.txt', 'r' )
+data = f.read() + ''
 f.close()
+
 
 print(data)
 def rle_code(data): 
@@ -27,23 +26,28 @@ def rle_code(data):
     else: 
         encoding += str(count) + povt_char 
         return encoding
-
-print(rle_code(data))
-
+code = rle_code(data)
+print(code)
+print()
 #не пойму как избавится от 1  в конце "слова" !?
 
-# def rle_decode(data):
-#     decode = '' 
-#     count = ''
-#     for char in data:
-#         if char.isdigit(): 
-#              count += char 
-#         else: 
-#             decode += int(count) * char
-#             count = '' 
-#     return decode
+def rle_decode(data):
+    decoding = ''
+    count = ''
+    for char in data:
+        if char.isdigit():
+            count += char
+        else :
+            if not count:
+                decoding += char
+            else: 
+                decoding += int(count) * char
+                count = ''
+    return decoding
+decode = rle_decode(data)
+print(decode)
 
-# print(rle_decode(data))
+
 
 
 
