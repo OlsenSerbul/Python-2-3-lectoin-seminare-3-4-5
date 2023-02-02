@@ -3,7 +3,7 @@
 # aaaaabbbcccc -> 5a3b4c
 # 5a3b4c -> aaaaabbbcccc
 
-f = open('file.txt', 'r' )
+f = open('new_file.txt', 'r' )
 data = f.read()+''
 f.close
 count = 0
