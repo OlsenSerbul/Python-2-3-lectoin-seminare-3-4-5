@@ -15,9 +15,8 @@ while len(poz_fib) <= k:
 
 while len(neg_fib) <= k:
     neg_fib.append(- neg_fib[index1+1] + neg_fib[index1] )
+
     index1 += 1
 
 neg_fib.reverse()
-print(f'Результат:  {neg_fib + poz_fib}')
-
-# не знаю как избавится от лишнего 0
+print(f'Результат:  {neg_fib[:-1] + poz_fib}')
