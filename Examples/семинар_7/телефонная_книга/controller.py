@@ -1,35 +1,33 @@
 import model
 import view
 
-def click():
-    view.show_menu()
-    if view.get_value() == 1:
-        view.print_console(model.show_all(model.tel_book))
-    elif view.get_value() == 2:
-        value_number = view.get_value_number()
-        view.print_console(model.find_contact(value_number, model.tel_book))
-    elif view.get_value() == 3:
-        value_number = view.get_value_number()
-        if value_number != int():
-            model.add_name(value_number, model.tel_book)
-            value_number = view.get_value_number()
-            model.add_number(value_number, model.tel_book)
-        else:
-            model.add_number(value_number, model.tel_book)
-            value_number = view.get_value_number()
-            model.add_name(value_number, model.tel_book)
-        view.print_console(model.tel_book)
-    elif view.get_value() == 4:
-        value_number = view.get_value_number()
-        view.print_console(model.del_cont(value_number, model.tel_book))
-    elif view.get_value() == 5:  
-         value_number = view.get_value_number()
-         new_value_number = view.get_new_value_number()
-         view.print_console(model.change_cont(new_value_number, value_number, model.tel_book))
-    else:
-        model.exit()
+def start():
+    user_choice = 0
+    while user_choice != 8:
+        user_choice= view.main_menu()
 
+        match user_choice:
+            case 1:
+                phone_book = model.get_phone_book()
+                view.show_contacts(phone_book)
+                
+            case 2:
+                model.open_phone_book()
+
+            case 3:
+                pass
+
+            case 4:
+                pass
+
+            case 5:
+                pass
+
+            case 6:
+                pass
+
+            case 7:
+                pass
 
 
     
-        

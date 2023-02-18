@@ -1,17 +1,26 @@
-def show_menu():
-    print('Добро пожаловать!Выберите действие:\n1 - показать весь телефонный стравочник\n'
-          '2 - найти контакт\n3 - добавить контакт\n4 - удалить контакт\n5 - изменить контакт\n'
-          '6 - выход')
-def get_value():
-    return int(input('Введите номер действия : '))
 
-def get_value_number():
-    value_number = (input('Введите значение : '))
-    return value_number
 
-def get_new_value_number():
-    new_value_number = (input('Введите новое значение : '))
-    return new_value_number
-    
-def print_console():
-    print()
+def main_menu():
+    commands = ['Показать все контакты', 
+                'Открыть файл',
+                'Сохранить файл',
+                'Новый контакт',
+                'Изменить контакт',
+                'Удалить контакт', 
+                'Найти контакт', 
+                'Выйти из программы']
+    print('Выберите пункт меню: ')
+    for i in range(len(commands)):
+        print(f'\t{i+1}. {commands[i]}')
+    user_input = int(input('Введите пункт меню: '))
+    while 1 > user_input > 8:
+        print('Такого пункта в меню нет.') 
+        user_input = int(input('Выберете пункт с 1 по 8 : '))
+    return user_input
+
+def show_contacts(phone_book: list):
+    if len(phone_book)>0:
+        for item in phone_book:
+            print(item)
+    else:
+        print('Телефонная книга пуста или не загружена')

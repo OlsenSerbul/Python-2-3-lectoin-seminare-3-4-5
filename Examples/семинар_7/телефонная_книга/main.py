@@ -1,3 +1,3 @@
 import controller
 
-controller.click()
+controller.start()
