@@ -13,6 +13,7 @@ def start():
                 
             case 2:
                 model.open_phone_book()
+                view.load_success()
 
             case 3:
                 pass

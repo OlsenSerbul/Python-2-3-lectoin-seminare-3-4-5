@@ -9,18 +9,26 @@ def main_menu():
                 'Удалить контакт', 
                 'Найти контакт', 
                 'Выйти из программы']
-    print('Выберите пункт меню: ')
+    print('\nВыберите пункт меню: ')
     for i in range(len(commands)):
         print(f'\t{i+1}. {commands[i]}')
     user_input = int(input('Введите пункт меню: '))
-    while 1 > user_input > 8:
+    while user_input > 8 or user_input < 1:
         print('Такого пункта в меню нет.') 
         user_input = int(input('Выберете пункт с 1 по 8 : '))
     return user_input
 
+
 def show_contacts(phone_book: list):
-    if len(phone_book)>0:
+    if len(phone_book)> 0:
         for item in phone_book:
-            print(item)
+            print(f'{item[0]} {item[1]} ({item[2]})')
     else:
         print('Телефонная книга пуста или не загружена')
+
+def load_success():
+    print('Телефонная книга загружена успешно')
+
+def new_contact():
+    new = []
+    
