@@ -33,7 +33,7 @@ def who_answer(journal: dict):
     who_answer = input('Кто будет отвечать?  ')
     for child in journal:
         if who_answer == journal.get(child):
-            return who_answer
+            return child
     else:
        return 'Ученик не найден.'
 
@@ -42,4 +42,4 @@ def what_marc():
 
 def list_of_child(journal: dict):
     for i, child in enumerate(journal, 1):
-        print(f'{i}, {child:20} {journal.get(child)}')
+        print(f'{i}. {child:20} {journal.get(child)}')
