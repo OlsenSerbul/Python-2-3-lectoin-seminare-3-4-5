@@ -1,8 +1,8 @@
 import random
 import handlers
 
-def my_bot(num_sweet):
-    if num_sweet > 28:
-       return 28
+def my_bot(remainder_sweet):
+    if remainder_sweet > 28:
+       return random.randint(1,28)
     else:
-       return random.randint(1,28) 
+       return remainder_sweet 
