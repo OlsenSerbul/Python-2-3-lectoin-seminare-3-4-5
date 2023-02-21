@@ -40,7 +40,6 @@ async def mes_game(message: types.Message):
 @dp.message_handler()
 async def mes_all(message: types.Message):
     if message.text.isdigit():
-        player_list = ['бот', f'{message.from_user.first_name}']
         global remainder_sweet
         if 0 < int(message.text) < 29:
             
@@ -57,7 +56,7 @@ async def mes_all(message: types.Message):
                   await message.answer(f'Конфеты есть, играем')
                   await message.answer('Твой ход. Сколько конфет ты берешь? ')
             else:
-                await message.answer(f'Конфеты кончились.{player_list[1]} , ты победитель ! Для новой игры жми /game ')
+                await message.answer(f'Конфеты кончились.{message.from_user.first_name} , ты победитель ! Для новой игры жми /game ')
                 await message.answer(f'Лови фотку...')
                 await dp.bot.send_photo(message.from_user.id, photo=open('Examples\семинар_9\бот.jpg','rb'))
                 
